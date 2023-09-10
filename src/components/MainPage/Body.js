@@ -3,10 +3,10 @@ import VideoContainer from "./VideoContainer";
 
 const Body = () =>{
     return (
-        <>
-        <SideMenu/>
-         <VideoContainer/>
-        </>
+        <div className="grid grid-flow-col">
+            <SideMenu/>
+            <VideoContainer/>
+        </div>
     )
 }
 
