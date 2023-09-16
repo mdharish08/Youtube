@@ -1,11 +1,11 @@
+import { Outlet } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import VideoContainer from "./VideoContainer";
 
 const Body = () =>{
     return (
-        <div className="grid grid-flow-col">
+        <div className="grid grid-flow-col overflow-hidden pt-14">
             <SideMenu/>
-            <VideoContainer/>
+            <Outlet/>
         </div>
     )
 }

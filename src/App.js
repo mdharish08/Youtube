@@ -7,8 +7,8 @@ import Body from './components/MainPage/Body';
 function App() {
   return (
     <Provider store={Store}>
-      <Header/>
-      <Body/>
+        <Header/>
+        <Body/>
     </Provider>
   );
 }

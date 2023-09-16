@@ -2,12 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import WatchBody from './components/WatchPage/WatchBody';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter ,RouterProvider} from 'react-router-dom';
+import VideoContainer from './components/MainPage/VideoContainer';
 
+const router = createBrowserRouter([
+  {
+    path : '/',
+    element : <App/>,
+    children : [
+      {
+        path : '/',
+        element : <VideoContainer/>
+      },
+      {
+        path : 'watch',
+        element : <WatchBody/>
+      }
+    ]
+  }]
+)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
