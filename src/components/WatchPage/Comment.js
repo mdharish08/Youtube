@@ -13,7 +13,7 @@ const Comment = ({config,isReply}) => {
         setShowReplies(!showReplies);
     }
     return (
-        <div className="flex mt-4">
+        <div className="flex mt-4 mb-2">
             <img className="w-10 h-10 rounded-full" alt="dp" src={topLevelComment?.snippet?.authorProfileImageUrl}/>
             <div className="ml-5 flex flex-col">
                 <div>{topLevelComment?.snippet?.authorDisplayName}</div>
