@@ -6,6 +6,7 @@ import WatchBody from './components/WatchPage/WatchBody';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter ,RouterProvider} from 'react-router-dom';
 import VideoContainer from './components/MainPage/VideoContainer';
+import SearchContainer from './components/ResultPage/SearchContainer';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path : 'watch',
         element : <WatchBody/>
+      },
+      {
+        path : 'results',
+        element : <SearchContainer/>
       }
     ]
   }]

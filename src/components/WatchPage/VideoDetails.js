@@ -8,7 +8,6 @@ const VideoDetails = ({id}) => {
     async function getVideoDetails(){
         const result = await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id='+  id + '&key=' + youtubeApiKey);
         const json = await result.json();
-        console.log(json.items[0]);
         setChannelId(json?.items?.[0]?.snippet?.channelId);
         setVideoDetails(json?.items?.[0]);
     }
