@@ -18,12 +18,10 @@ const Header = () => {
 
     async function getAutoSuggestion(){
         try{
-          const response = await fetch('http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='+ searchValue);
-          const jsonResponse = await response.json();
-          setSuggestions(jsonResponse?.[1]);
-
+            const response = await fetch('http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='+ searchValue);
+            const jsonResponse = await response.json();
+            setSuggestions(jsonResponse?.[1]);
         }catch(error){
-            console.log(error);
         }
     }
 
@@ -37,7 +35,11 @@ const Header = () => {
 
     useEffect(() => {
         const id = setTimeout(() => {
-            getAutoSuggestion();
+            if(!!searchValue){
+                getAutoSuggestion();
+            }else{
+                setSuggestions([]);
+            }
         },300);
 
         return () => clearTimeout(id);
