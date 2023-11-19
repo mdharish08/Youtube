@@ -1,2 +1,2 @@
-# Yoututbe
+# Youtube
 Youtube clone using React
