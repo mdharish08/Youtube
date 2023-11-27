@@ -9,7 +9,7 @@ const VideoDetails = ({id}) => {
         const result = await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id='+  id + '&key=' + youtubeApiKey);
         const json = await result.json();
         setChannelId(json?.items?.[0]?.snippet?.channelId);
-        setVideoDetails(json?.items?.[0]);
+        setVideoDetails(json?.items?.[0] || {});
     }
 
     function getDateString(param){

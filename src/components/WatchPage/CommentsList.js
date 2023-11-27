@@ -20,6 +20,9 @@ const CommentsList = ({id}) => {
 
     }
     async function getCommentsList(){
+        if(!id){
+            return;
+        }
         isFetching.current = true;
         let url = "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=" + id + "&key=" + youtubeApiKey;
         if(!!nextPageToken.current){
